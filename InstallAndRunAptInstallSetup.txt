@@ -1,0 +1,66 @@
+How to Install TeamViewer or any other program for " sudo apt install " and " launch " on Ubuntu 20.04 LTS
+
+TeamViewer is a popular software for remote access over the Internet to and from your system for Linux, MacOS and Windows. This application can connect to any personal computer or server so that you can use it as if you were sitting right in front of it. TeamViewer works as a remote control for your partner’s computer system and allows you to establish a remote session. Both you and your partner must have this small application installed and running, even if you are not an administrator. All you need to know is your partner’s ID and password to control his computer.
+
+In this article, we will explain how to install the TeamViewer application on your Ubuntu system, both from the user interface and from the command line.
+
+The commands and procedures mentioned in this article were executed on a Ubuntu 20.04 LTS system, the same instructions can be used for the older Ubuntu 18.04 version as well.
+Installation of TeamViewer Through Ubuntu Command Line
+
+If you prefer the command line over the graphical interface, follow these steps in order to install TeamViewer through the Ubuntu Terminal application:
+Step 1: Download and add TeamViewer repository key
+
+Open the Terminal either through the system Dash or the Ctrl+Alt+T shortcut.
+
+First, you need to download the TeamViewer repository key as we will installing TeamViewer through its official website. Run the following command in order to download the key:
+
+$ cd /tmp
+$ wget https://download.teamviewer.com/download/linux/signature/TeamViewer2017.asc
+
+Download TeamViewer repository key
+
+The .asc key file will be downloaded to your Downloads folder by default.
+
+Please add this key to your system through the following apt-key command as sudo:
+
+$ sudo apt-key add TeamViewer2017.asc
+
+Step 2: Add the TeamViewer repository
+
+Run the following command to add the official TeamViewer repository from where we will be installing TeamViewer.
+
+For TeamViewer Stable version:
+
+$ sudo sh -c 'echo "deb http://linux.teamviewer.com/deb stable main" >> /etc/apt/sources.list.d/teamviewer.list'
+
+For TeamViewer Preview version:Advertisement
+
+$ sudo sh -c 'echo "deb http://linux.teamviewer.com/deb preview main" >> /etc/apt/sources.list.d/teamviewer.list'
+
+We are adding the repository for TeamViewer Preview version in this tutorial.
+
+Add Teamviewer repository
+
+Now, enter the following command as root in order to update your system’s repository index with that on the internet:
+
+$ sudo apt update
+
+Update Ubuntu package list
+Step 3: Install TeamViewer through the apt command
+
+Finally, run the following command as sudo in order to install TeamViewer to your system:
+
+$ sudo apt install teamviewer
+
+Install TeamViewer with apt
+
+The system will prompt you with a Y/n option in order to continue the installation procedure. Please enter Y and hit Enter to continue. TeamViewer will then be installed on your system.
+Step 4: Launch TeamViewer
+
+If you wish to launch TeamViewer through the command line, enter the following command in your Terminal:
+
+$ teamviewer
+
+Uninstall TeamViewer
+
+In order to uninstall TeamViewer from your system without removing any configurations you might have made, enter the following command as sudo:
